@@ -14,19 +14,19 @@ jobs:
     steps:
 
       - name: Checkout Repository
-       uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Check Coding Style
-       run: check.sh $(pwd) $(pwd)
+        run: check.sh $(pwd) $(pwd)
 
       - name: report banana result
-       run: |
-        NB_ERROR=$(cat coding-style-reports.log | wc -l)
-        if [ $NB_ERROR -gt 0 ]; then
-          ERRORS=$(cat coding-style-reports.log);
-          echo "Banana found $NB_ERROR error(s)"
-          echo "$ERRORS"
-          exit 1
-        fi
-        echo "Everything is good ! Keep on coding !"
-        exit 0
+        run: |
+          NB_ERROR=$(cat coding-style-reports.log | wc -l)
+          if [ $NB_ERROR -gt 0 ]; then
+            ERRORS=$(cat coding-style-reports.log);
+            echo "Banana found $NB_ERROR error(s)"
+            echo "$ERRORS"
+            exit 1
+          fi
+            echo "Everything is good ! Keep on coding !"
+            exit 0
