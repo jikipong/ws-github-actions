@@ -13,14 +13,14 @@ jobs:
       image: ghcr.io/epitech/coding-style-checker:latest
     steps:
 
-      -name: Checkout Repository
-      -uses: actions/checkout@v4
+      - name: Checkout Repository
+       uses: actions/checkout@v4
 
-      -name: Check Coding Style
-      -run: check.sh $(pwd) $(pwd)
+      - name: Check Coding Style
+       run: check.sh $(pwd) $(pwd)
 
-      -name: report banana result
-      -run: |
+      - name: report banana result
+       run: |
         NB_ERROR=$(cat coding-style-reports.log | wc -l)
         if [ $NB_ERROR -gt 0 ]; then
           ERRORS=$(cat coding-style-reports.log);
