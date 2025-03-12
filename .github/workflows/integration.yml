@@ -8,7 +8,7 @@ jobs:
 
   coding-style:
     name: Check Coding Style
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     container:
       image: ghcr.io/epitech/coding-style-checker:latest
     steps:
